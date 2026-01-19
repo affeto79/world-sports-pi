@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Sports Pi</title>
   <style>
-    body {
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<script>
+  Pi.init({ version: "2.0", sandbox: true });
+</script>  body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1e3a8a, #6a11cb);
@@ -146,11 +149,9 @@
       <p class="tagline">Plateforme sportive mondiale dans l’écosystème Pi Network.</p>
       <p class="features">Actualités • Compétitions • Talents</p>
 
-      <!-- BOUTON CONNEXION PI -->
-      <button class="btn" id="pi-login">Connecter avec Pi</button>
-    </section>
-
-    <!-- ICÔNES SPORT -->
+       <button id="pi-login" onclick="loginWithPi()">
+  Connecter avec Pi
+</button>   <!-- ICÔNES SPORT -->
     <section id="sports" class="sports-icons">
       <div>⚽<br><span>Football</span></div>
       <div>🏀<br><span>Basket</span></div>
