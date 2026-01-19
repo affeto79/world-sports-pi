@@ -8,7 +8,22 @@
   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 <script>
   Pi.init({ version: "2.0", sandbox: true });
-</script>  body {
+</script><script>
+  function loginWithPi() {
+    Pi.authenticate(
+      ["username"],
+      function (auth) {
+        alert("Connecté : " + auth.user.username);
+        console.log(auth);
+      },
+      function (error) {
+        alert("Erreur Pi Auth");
+        console.error(error);
+      }
+    );
+  }
+</script>
+    body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1e3a8a, #6a11cb);
