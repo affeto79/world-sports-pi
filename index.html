@@ -68,7 +68,23 @@
     color: #777;
   }
 </style>
-  <style>
+  <style> .sports-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.sports-icons div {
+  text-align: center;
+  font-size: 26px;
+}
+
+.sports-icons span {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+  color: #555;
+}
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -144,7 +160,12 @@
 
     <p>
       Actualités • Compétitions • Talents
-    </p>
+    </p> <div class="sports-icons">
+  <div>⚽<br><span>Football</span></div>
+  <div>🏀<br><span>Basket</span></div>
+  <div>🏃<br><span>Athlétisme</span></div>
+  <div>🏆<br><span>Compétitions</span></div>
+</div>
 
     <!-- BOUTON -->
     <a href="#" class="btn">Powered by Pi Network</a>
