@@ -6,111 +6,136 @@
   <title>World Sports Pi</title>
   <style>
     /* --- DESIGN GLOBAL --- */
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #6a11cb);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .container {
-      background: #ffffff;
-      color: #222;
-      padding: 30px 25px;
-      max-width: 420px;
-      width: 90%;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      text-align: center;
-    }
+.container {
+  background: #ffffff;
+  color: #222;
+  padding: 35px 30px;
+  max-width: 450px;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
 
-    /* --- MENU --- */
-    .menu {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
+.container:hover {
+  transform: translateY(-5px);
+}
 
-    .menu a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      color: #1e3a8a;
-    }
+/* --- MENU --- */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
 
-    .menu a:hover {
-      text-decoration: underline;
-    }
+.menu a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6a11cb;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
 
-    /* --- LOGO --- */
-    .logo {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
+.menu a:hover {
+  background: #6a11cb;
+  color: #fff;
+}
 
-    h1 {
-      margin: 10px 0;
-      font-size: 26px;
-      color: #1e3a8a;
-    }
+/* --- LOGO --- */
+.logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .tagline {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 10px;
-    }
+/* --- TITRE ET TEXTES --- */
+h1 {
+  margin: 10px 0;
+  font-size: 28px;
+  color: #1e3a8a;
+}
 
-    .features {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
+.tagline {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
+}
 
-    /* --- ICÔNES SPORT --- */
-    .sports-icons {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px 0;
-    }
+.features {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 22px;
+}
 
-    .sports-icons div {
-      text-align: center;
-      font-size: 26px;
-    }
+/* --- ICÔNES SPORT --- */
+.sports-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
 
-    .sports-icons span {
-      display: block;
-      font-size: 12px;
-      margin-top: 4px;
-      color: #555;
-    }
+.sports-icons div {
+  text-align: center;
+  font-size: 28px;
+  transition: transform 0.2s;
+}
 
-    /* --- FOOTER --- */
-    footer {
-      margin-top: 25px;
-      font-size: 12px;
-      color: #777;
-    }
+.sports-icons div:hover {
+  transform: scale(1.2);
+}
 
-    .btn {
-      display: inline-block;
-      background: #facc15;
-      color: #000;
-      padding: 12px 22px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 10px;
-    }
+.sports-icons span {
+  display: block;
+  font-size: 12px;
+  margin-top: 6px;
+  color: #555;
+  font-weight: 600;
+}
+
+/* --- BOUTONS --- */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #000;
+  padding: 14px 26px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: 28px;
+  font-size: 12px;
+  color: #666;
+}
   </style>
 </head>
-<body>
-  <div class="container">
+<bodyclassdiv class="container">
 
     <!-- MENU -->
     <nav class="menu">
