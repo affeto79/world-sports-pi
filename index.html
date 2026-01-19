@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Sports Pi</title>
+  <style>
+    /* --- DESIGN GLOBAL --- */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: #ffffff;
+      color: #222;
+      padding: 30px 25px;
+      max-width: 420px;
+      width: 90%;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    /* --- MENU --- */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- LOGO --- */
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 26px;
+      color: #1e3a8a;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* --- ICÔNES SPORT --- */
+    .sports-icons {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .sports-icons div {
+      text-align: center;
+      font-size: 26px;
+    }
+
+    .sports-icons span {
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
+      color: #555;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #facc15;
+      color: #000;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- MENU -->
+    <nav class="menu">
+      <a href="#accueil">Accueil</a>
+      <a href="#sports">Sports</a>
+      <a href="#actus">Actualités</a>
+    </nav>
+
+    <!-- LOGO + TITRE -->
+    <section id="accueil">
+      <img src="logo.png" alt="World Sports Pi Logo" class="logo">
+      <h1>World Sports Pi</h1>
+      <p class="tagline">
+        Plateforme sportive mondiale dans l’écosystème Pi Network.
+      </p>
+      <p class="features">
+        Actualités • Compétitions • Talents
+      </p>
+    </section>
+
+    <!-- ICÔNES SPORT -->
+    <section id="sports" class="sports-icons">
+      <div>⚽<br><span>Football</span></div>
+      <div>🏀<br><span>Basket</span></div>
+      <div>🏃<br><span>Athlétisme</span></div>
+      <div>🏆<br><span>Compétitions</span></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="https://affeto79.github.io/world-sports-pi/#">Powered by Pi Network</a><br>
+      © 2026 World Sports Pi
+    </footer>
+
+  </div>
+</body>
+</html>
