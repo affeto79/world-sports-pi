@@ -163,10 +163,21 @@
       <h1>World Sports Pi</h1>
       <p class="tagline">Plateforme sportive mondiale dans l’écosystème Pi Network.</p>
       <p class="features">Actualités • Compétitions • Talents</p>
+ <button id="pi-login">Connecter avec Pi</button>
 
-       <button id="pi-login" onclick="loginWithPi()">
-  Connecter avec Pi
-</button>   <!-- ICÔNES SPORT -->
+<script>
+  document.getElementById("pi-login").onclick = async () => {
+    try {
+      const auth = await Pi.authenticate(
+        ["username"],
+        () => console.log("Ready for payment")
+      );
+      alert("Connecté : " + auth.user.username);
+    } catch (err) {
+      alert("Erreur Pi : " + JSON.stringify(err));
+    }
+  };
+</script>  <!-- ICÔNES SPORT -->
     <section id="sports" class="sports-icons">
       <div>⚽<br><span>Football</span></div>
       <div>🏀<br><span>Basket</span></div>
