@@ -67,7 +67,22 @@
     font-size: 12px;
     color: #777;
   }
-</style>
+</style> .menu {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
   <style> .sports-icons {
   display: flex;
   justify-content: space-between;
@@ -146,8 +161,12 @@
 
 <body>
   <div class="container">
-
-    <!-- LOGO -->
+<nav class="menu">
+  <a href="#accueil">Accueil</a>
+  <a href="#sports">Sports</a>
+  <a href="#actus">Actualités</a>
+</nav>
+   <div id="accueil"></div> <!-- LOGO -->
     <div class="logo-text"></div>
 
     <!-- TITRE -->
@@ -159,9 +178,9 @@
     </p>
 
     <p>
-      Actualités • Compétitions • Talents
+     <div id="actus"></div> Actualités • Compétitions • Talents
     </p> <div class="sports-icons">
-  <div>⚽<br><span>Football</span></div>
+ <div id="sports"></div> <div>⚽<br><span>Football</span></div>
   <div>🏀<br><span>Basket</span></div>
   <div>🏃<br><span>Athlétisme</span></div>
   <div>🏆<br><span>Compétitions</span></div>
