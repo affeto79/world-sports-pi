@@ -84,8 +84,22 @@
     <h1>World Sports Pi</h1>
     <p>Plateforme sportive mondiale dans l’écosystème Pi Network.</p>
 
-    <button class="btn" id="pi-login">Connecter avec Pi</button>
-  </section>
+    <script>
+  document.getElementById("pi-login").onclick = async () => {
+    if (!window.Pi) {
+      alert("Pi SDK non détecté");
+      return;
+    }
+
+    try {
+      const auth = await Pi.authenticate(["username"]);
+      alert("Connecté : " + auth.user.username);
+    } catch (err) {
+      alert("Erreur Pi Auth");
+      console.error(err);
+    }
+  };
+</script>
 
   <footer>
     Powered by Pi Network<br>
@@ -95,8 +109,7 @@
 </div>
 
 <!-- PI SDK -->
-<script src="https://sdk.minepi.com/pi-sdk.js"></script>
-<script>
+<script src="https://sdk.minepi.com/pi-sdk.js" defer></script>
   Pi.init({
     version: "2.0",
     sandbox: true,
