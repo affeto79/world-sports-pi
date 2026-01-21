@@ -1,166 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Sports Pi</title>
-
-  <!-- ================== CSS ================== -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3a8a, #6a11cb);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      background: #ffffff;
-      color: #222;
-      padding: 35px 30px;
-      max-width: 450px;
-      width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .container:hover { transform: translateY(-5px); }
-
-    .menu {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 25px;
-    }
-    .menu a {
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      color: #6a11cb;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .menu a:hover { background: #6a11cb; color: #fff; }
-
-    .logo {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    h1 { margin: 10px 0; font-size: 28px; color: #1e3a8a; }
-    .tagline { font-size: 16px; color: #555; margin-bottom: 12px; }
-    .features { font-size: 14px; color: #444; margin-bottom: 22px; }
-
-    .sports-icons { display: flex; justify-content: space-between; margin: 25px 0; }
-    .sports-icons div { text-align: center; font-size: 28px; transition: transform 0.2s; }
-    .sports-icons div:hover { transform: scale(1.2); }
-    .sports-icons span { display: block; font-size: 12px; margin-top: 6px; color: #555; font-weight: 600; }
-
-    .btn-pi {
-      background: linear-gradient(135deg, #facc15, #f59e0b);
-      border: none;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 15px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-      margin-top: 12px;
-    }
-    .btn-pi:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-
-    section {
-      margin-top: 30px;
-      padding: 15px;
-      background: #f9f9f9;
-      border-radius: 15px;
-      text-align: left;
-    }
-    section h2 { color: #1e3a8a; margin-bottom: 10px; }
-    section ul { padding-left: 20px; margin: 0; }
-    section ul li { margin-bottom: 6px; }
-
-    footer { margin-top: 28px; font-size: 12px; color: #666; text-align:center; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Sports Pi</title>
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#1e3a8a,#6a11cb);display:flex;justify-content:center;align-items:center;min-height:100vh}
+.container{background:#fff;padding:30px;border-radius:20px;max-width:450px;width:90%;text-align:center}
+.logo{width:110px;height:110px;border-radius:50%}
+.btn{background:#facc15;padding:14px 28px;border-radius:30px;border:none;font-weight:bold;cursor:pointer}
+</style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- MENU -->
-    <nav class="menu">
-      <a href="#accueil">Accueil</a>
-      <a href="#sports">Sports</a>
-      <a href="#actus">Actualités</a>
-    </nav>
-
-    <!-- ACCUEIL -->
-    <section id="accueil" style="text-align:center;">
-      <img src="logo.png" alt="World Sports Pi Logo" class="logo">
-      <h1>World Sports Pi</h1>
-      <p class="tagline">Plateforme sportive mondiale dans l’écosystème Pi Network.</p>
-      <p class="features">Actualités • Compétitions • Talents</p>
-
-      <!-- BOUTON PI -->
-      <button class="btn-pi" id="pi-login">🔐 Connecter avec Pi</button>
-      <p style="font-size:12px;color:#555;margin-top:10px;">
-        ⚠️ Connexion Pi en Testnet / Sandbox. La fonctionnalité complète sera activée prochainement.
-      </p>
-    </section>
-
-    <!-- SPORTS -->
-    <section id="sports">
-      <h2>🏆 Sports</h2>
-      <ul>
-        <li>⚽ Football</li>
-        <li>🏀 Basketball</li>
-        <li>🏃 Athlétisme</li>
-        <li>🥋 Arts martiaux</li>
-      </ul>
-    </section>
-
-    <!-- ACTUALITÉS -->
-    <section id="actus">
-      <h2>📰 Actualités</h2>
-      <p>Bientôt les actualités sportives mondiales dans l’écosystème Pi.</p>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <a href="#">Powered by Pi Network</a><br>
-      © 2026 World Sports Pi
-    </footer>
-  </div>
-
-  <!-- ================== PI SDK ================== -->
-  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-  <script>
-    // INIT SDK - TESTNET READY
-    Pi.init({
-      version: "2.0",
-      sandbox: true, // ✅ Sandbox activable
-      appId: "xyzjujaqutnyrirh8u0lmmpxgpznr6tb29ajfx4ondhobaop6z4gid5jkydyefz3"
-    });
-
-    // BOUTON PI : Connexion Testnet
-    document.getElementById("pi-login").onclick = async () => {
-      try {
-        const auth = await Pi.authenticate(["username"]);
-        alert("Connecté : " + auth.user.username);
-        console.log(auth);
-      } catch (err) {
-        alert("Erreur Pi : " + JSON.stringify(err));
-        console.error(err);
-      }
-    };
-  </script>
+<div class="container">
+<img src="logo.png" class="logo">
+<h1>World Sports Pi</h1>
+<p>Plateforme sportive mondiale dans l’écosystème Pi Network</p>
+<button class="btn" id="pi-login">Connecter avec Pi</button>
+<p style="font-size:12px">Sandbox Testnet</p>
+</div>
+<script>
+Pi.init({version:"2.0",sandbox:true,appId:"xyzjujaqutnyrirh8u0lmmpxgpznr6tb29ajfx4ondhobaop6z4gid5jkydyefz3"});
+document.getElementById("pi-login").onclick=async()=>{
+ try{
+  const auth=await Pi.authenticate(["username"]);
+  alert("Connecté : "+auth.user.username);
+ }catch(e){
+  alert("Erreur Pi : "+JSON.stringify(e));
+ }
+};
+</script>
 </body>
 </html>
