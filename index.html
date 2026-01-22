@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>World Sports Pi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- PI SDK -->
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #6a11cb);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 25px;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <img src="logo.png" class="logo" alt="World Sports Pi Logo">
+  <h1>World Sports Pi</h1>
+  <p>Plateforme sportive mondiale dans l’écosystème Pi Network.</p>
+
+  <button id="pi-login">Connecter avec Pi</button>
+
+  <footer>
+    Powered by Pi Network<br>© 2026 World Sports Pi
+  </footer>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    if (!window.Pi) {
+      alert("Pi SDK non détecté");
+      return;
+    }
+
+    Pi.init({
+      version: "2.0",
+      sandbox: true,
+      appId: "xyzjujaqutnyrirh8u0lmmpxgpznr6tb29ajfx4ondhobaop6z4gid5jkydyefz3"
+    });
+
+    document.getElementById("pi-login").addEventListener("click", async function () {
+      try {
+        const auth = await Pi.authenticate(["username"]);
+        alert("Connecté : " + auth.user.username);
+      } catch (err) {
+        alert("Erreur Pi : " + JSON.stringify(err));
+        console.error(err);
+      }
+    });
+
+  });
+</script>
+
+</body>
+</html>
