@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>World Sports Pi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- PI SDK (OBLIGATOIRE) -->
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: none;
+      background: gold;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>World Sports Pi</h1>
+
+<button id="pi-login">Connecter avec Pi</button>
+
+<script>
+  // 🔴 TEST DIRECT
+  alert("Pi = " + typeof Pi);
+
+  if (typeof Pi === "undefined") {
+    alert("❌ Pi SDK NON chargé");
+  } else {
+    alert("✅ Pi SDK chargé");
+
+    Pi.init({
+      version: "2.0",
+      sandbox: true,
+      appId: "xyzjujaqutnyrirh8u0lmmpxgpznr6tb29ajfx4ondhobaop6z4gid5jkydyefz3"
+    });
+
+    document.getElementById("pi-login").onclick = async () => {
+      try {
+        const auth = await Pi.authenticate(["username"]);
+        alert("Connecté : " + auth.user.username);
+      } catch (e) {
+        alert("Erreur : " + JSON.stringify(e));
+      }
+    };
+  }
+</script>
+
+</body>
+</html>
